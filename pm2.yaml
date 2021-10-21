@@ -1,0 +1,6 @@
+apps:
+  - script: ./dist/server.js
+    instances: max
+    exec_mode: cluster
+    name: PicoYPlaca
+    log_date_format: DD-MM HH:mm:ss.SSS

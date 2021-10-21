@@ -1,0 +1,56 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "description": "This is a swagger api specification for validate license plate."
+  },
+  "host": "localhost:3001",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/validate/licensePlate": {
+      "post": {
+        "summary": "Validate if a car can circulate by license plate",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        },
+        "content": {
+          "application/json": {}
+        },
+        "parameters": [
+          {
+            "name": "date",
+            "in": "body",
+            "description": "Date when you want to evaluate if a car can drive with format (YYYY-MM-DD)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "time",
+            "in": "body",
+            "description": "Date when you want to evaluate if a car can drive with format (hh:mm)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "licensePlate",
+            "in": "body",
+            "description": "License plate to evaluate with format (XXX-123 o XXX-1234)",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    }
+  }
+}
